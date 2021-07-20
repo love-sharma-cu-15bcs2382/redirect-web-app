@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ethos</title>
+    <script type="text/javascript">
+
+     function redirectToAppStore() {
+	    const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+		const android = !!navigator.platform && /Android/.test(navigator.platform);
+	        if (iOS) {
+                window.location.href = "https://in.yahoo.com";
+				return true;       
+	       } else if(android) {
+				window.location.href = "https://www.google.com";
+				return true;
+		   } else {
+				return false;
+	       }
+	  }
+      if( !redirectToAppStore()) {
+		    var urlIndex = window.location.href.indexOf('?url=');
+		    if (urlIndex > 0) {
+		        var redirectUri = window.location.href.substring(urlIndex + 5, window.location.href.length)
+                    window.location.href = redirectUri;
+                }
+		}
+     </script>
+</head>
+<body>
+        <div>
+            <h1></h1>
+        </div>
+</body>
+</html>
